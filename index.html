@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Reservation Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="outline">
+        <h1>Dinner Reservation Scheduler</h1>
+        <section class="menu">
+            <div class="title">
+                <h2>MENU</h2>
+
+
+                <!-- <div class="accordion">
+              <dl>
+                <dt>
+                  <dl>
+                    <dt>
+                      <a href="#accordion1" aria-expanded="false" aria-controls="accordion1" class="accordion-title accordionTitle js-accordionTrigger">Menu Accordion Heading </a>
+                    </dt>
+                    <dd class="accordion-content accordionItem is-collapsed" id="accordion1" aria-hidden="false">
+                      <p> item one </p> -->
+
+
+
+                <div class="menu-container" id="menu-container">
+
+                    <!--menu is inserted here -->
+
+                </div>
+
+                <div class="menu">
+
+                    <div class="meal" id="random-meal">
+                        <!-- Randomly selected meal will be displayed here -->
+                    </div>
+                    <p>Can't decide what meal you want? Click the random meal button so we can decide for you!</p>
+                    <button class="random-button" onclick="randomizeMeal()">
+                        Random Meal
+                    </button>
+                </div>
+
+
+                <form>
+                    <div class="form">
+
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" placeholder="insert name" required>
+                        <p>
+
+                        <h2 class="availability">Current Availability</h2>
+                        <div id="availableDatesList"></div>
+                        <label for="date">Select a Date:</label>
+                        <input type="date" id="date">
+                        </p>
+                        <label for="guests">Guests:</label>
+                        <input type="number" id="guests" min="1" placeholder="number (including yourself)">
+
+                        <label>Menu Selection:</label>
+                        <select id="menu">
+                            <option value="" placeholder="select one"></option>
+                            <option value="Chicken Drumsticks">Chicken Drumsticks</option>
+                            <option value="Salmon">Salmon</option>
+                            <option value="Noodles">Noodles</option>
+                            <option value="Beef Burger">Beef Burger</option>
+                        </select><br />
+
+                        <label for="dietary" class="dietary-name">Dietary Restrictions:</label>
+                        <input type="text" id="dietary">
+                        <br>
+                        <div id="reservation-confirmation"></div>
+                        <br>
+                        <button id="checkAvailability">Check Availability</button>
+                        <button id="viewFilledSpots">View Filled Spots</button>
+                        <button id="submitReservation">Submit Reservation</button>
+                </form>
+            </div>
+            <br>
+            <br>
+            <div id="availabilityInfo"></div>
+            <br>
+            <ul id="filledSpotsList"></ul>
+            <br>
+    </div>
+    <!-- added your linkedin below with name! -->
+
+    <p>Coded by <a href="https://www.linkedin.com/in/hiregabby/" _blank>Gabby S</a> and <a href="https://www.linkedin.com/in/lorraine-ugen-03b08480/"
+            _blank>Lorraine Ugen</a></p>
+    <script src="script.js"></script>
+</body>
+
+</html>
