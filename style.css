@@ -21,7 +21,8 @@ h2 {
 }
 
 .form {
-  margin: 20px;
+  margin: 20px auto;
+  display: block;
   padding: 10px;
   color: #ffa1ac;
   background-color: rgb(241, 228, 228);
@@ -29,6 +30,7 @@ h2 {
   font-weight: bold;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px;
   min-width: 300px;
+  max-width: 900px
 }
 
 input,
