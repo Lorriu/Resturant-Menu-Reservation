@@ -49,176 +49,72 @@ function randomizeMeal() {
   const meal = menu[randomIndex];
   const randomMealDiv = document.getElementById("random-meal");
   randomMealDiv.innerHTML = `
-          <h2>${meal.title}</h2>
+          <h2> Would you like to try ${meal.title}? </h2>
           <img class="ran" src="${meal.img}" alt="${meal.title}">
       `;
 }
 
+// DOM event listener when 1. confirm details is clicked in form, saves in local storage and shows info
 document.addEventListener("DOMContentLoaded", function () {
-  let availabilityInfo = document.getElementById("availabilityInfo");
-  let checkAvailabilityButton = document.getElementById("checkAvailability");
-  let viewFilledSpotsButton = document.getElementById("viewFilledSpots");
-  let submitReservationButton = document.getElementById("submitReservation");
-  let filledSpotsList = document.getElementById("filledSpotsList");
-  let availableDatesList = document.getElementById("availableDatesList");
-  let maxCapacity = 10;
-  let reservations = [];
-  let availableDates = generateAvailableDates(reservations);
+  const submitButton = document.getElementById("submitReservation");
+  const nameInput = document.getElementById("name");
+  const dateInput = document.getElementById("date");
+  const guestsInput = document.getElementById("guests");
 
-  // Function to generate the first and last Friday of each month for the rest of 2023
-  function generateAvailableDates(reservations) {
-    let availableDatesx = reservations;
-    if ((reservations.length = 0)) {
-      for (let month = 10; month <= 12; month++) {
-        const firstDay = new Date(2023, month - 1, 1);
-        const lastDay = new Date(2023, month, 0);
+  submitButton.addEventListener("click", function () {
+    event.preventDefault(); 
+    const name = nameInput.value;
+    const selectedDate = dateInput.value;
+    const numberOfGuests = parseInt(guestsInput.value);
 
-        const firstSaturday = new Date(firstDay);
-        const lastSaturday = new Date(lastDay);
+    if (!name || !selectedDate || isNaN(numberOfGuests)) {
+      alert("Please fill out all required fields.");
+    } else {
+      const menuSelection = document.getElementById("menu").value;
+      alert(
+        `Thank you ${name}, for your reservation on ${selectedDate} for ${numberOfGuests} guests. Looking forward to enjoying ${menuSelection} with you!! 🍲`
+      );
 
-        while (firstSaturday.getDay() !== 6) {
-          firstSaturday.setDate(firstSaturday.getDate() + 1);
-        }
-        while (lastSaturday.getDay() !== 6) {
-          lastSaturday.setDate(lastSaturday.getDate() - 1);
-        }
+  // Store the reservation details in local storage
+      const reservationDetails = {
+        name,
+        selectedDate,
+        numberOfGuests,
+        menuSelection,
+      };
+      localStorage.setItem(
+        "reservationDetails",
+        JSON.stringify(reservationDetails)
+      );
 
-        availableDatesx.push(firstSaturday.toISOString().slice(0, 10), lastSaturday.toISOString().slice(0, 10));
-      }
+  // Reload the page in case you want to change
+      location.reload();
+
+  // Display the button to send reservation details
+      document.getElementById("sendReservationButton").style.display = "block";
     }
-
-    return availableDatesx;
-  }
-
-  // Populate the list of available dates with capacity
-  availableDates.forEach((date) => {
-    let formattedDate = new Date(date).toLocaleDateString("en-US", {
-      weekday: "short",
-      month: "short",
-      day: "2-digit",
-    });
-    // Create a div element for the date and capacity
-    let dateDiv = document.createElement("div");
-    dateDiv.textContent = `${formattedDate} Capacity: ${maxCapacity}`;
-    availableDatesList.appendChild(dateDiv);
   });
 
-  checkAvailabilityButton.addEventListener("click", function () {
-    // Get user input
-    const name = document.getElementById("name").value;
-    const selectedDate = document.getElementById("date").value;
-    const guestsInput = document.getElementById("guests").value;
-    const numberOfGuests = parseInt(guestsInput);
+  // Event listener for the "2. Send me the deets" aka Send Reservation button
+  document
+    .getElementById("sendReservationButton")
+    .addEventListener("click", function () {
+      // Get the reservation details from local storage
+      const storedReservationDetails =
+        localStorage.getItem("reservationDetails");
 
-    // Check if all required fields (name, selectedDate, numberOfGuests) are filled
-    if (!name || !selectedDate || isNaN(numberOfGuests)) {
-      console.log("Please fill out all required fields.");
-      return;
-    }
+      if (storedReservationDetails) {
+        const reservationDetails = JSON.parse(storedReservationDetails);
+        // const phoneNumber = prompt('Please enter the phone number for sending the reservation details via text:');
 
-    const dietaryRestrictions = document.getElementById("dietary").value;
+        const message = `Hey there! Here's my reservation for your dinner party! \n Name: ${reservationDetails.name}\n Date: ${reservationDetails.selectedDate}\n Guests: ${reservationDetails.numberOfGuests}\n Preference: ${reservationDetails.menuSelection}`;
 
-    // Loading data
-    if (availableDates.includes(selectedDate)) {
-      const seatsAvailable = maxCapacity - numberOfGuests;
-      if (seatsAvailable >= 0) {
-        reservations.push({
-          name: name,
-          date: selectedDate,
-          guests: numberOfGuests,
-          dietary: dietaryRestrictions,
-        });
-        availabilityInfo.textContent = `Reservation for ${numberOfGuests} guests on ${selectedDate} is confirmed for ${name}.`;
-
-        const confirmViewFilledSpots = confirm("Reservation submitted successfully. Do you want to view filled spots?");
-        if (confirmViewFilledSpots) {
-          viewFilledSpotsButton.click();
+        if (confirm("Do you want to send the reservation details via text?")) {
+          // Open the SMS app with the message and phone number
+          window.open(`sms:$?&body=${message}`);
         }
       } else {
-        availabilityInfo.textContent = `Sorry, there are not enough seats available for ${numberOfGuests} guests on ${selectedDate}. Please choose a different date or reduce the number of guests.`;
+        alert("No reservation details found.");
       }
-    }
-  });
-
-  const form = document.querySelector("form");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const confirmation = document.getElementById("reservation-confirmation");
-    const name = document.getElementById("name").value;
-    const guests = document.getElementById("guests").value;
-    const menu = document.getElementById("menu").value;
-    const date = document.getElementById("date").value;
-    const dietaryRestrictions = document.getElementById("dietary").value;
-
-    confirmation.innerHTML = `Thank you ${name}, for your reservation on ${date} for ${guests} guests. Enjoy your ${menu}!`;
-
-    return alert(`Thank you ${name}, for your reservation on ${date} for ${guests} guests. Enjoy your ${menu} meal! 🍲`);
-  });
+    });
 });
-
-//function takes in and pops returns an array
-// if someone clicks on the button it will push the reservation to the array, and remove the
-
-const confirmation = document.getElementById("reservation-confirmation");
-
-// (function(){
-//   var d = document,
-//   accordionToggles = d.querySelectorAll('.js-accordionTrigger'),
-//   setAria,
-//   setAccordionAria,
-//   switchAccordion,
-//   touchSupported = ('ontouchstart' in window),
-//   pointerSupported = ('pointerdown' in window);
-
-//   skipClickDelay = function(e){
-//     e.preventDefault();
-//     e.target.click();
-//   }
-
-//     setAriaAttr = function(el, ariaType, newProperty){
-//     el.setAttribute(ariaType, newProperty);
-//   };
-//   setAccordionAria = function(el1, el2, expanded){
-//     switch(expanded) {
-//       case "true":
-//         setAriaAttr(el1, 'aria-expanded', 'true');
-//         setAriaAttr(el2, 'aria-hidden', 'false');
-//         break;
-//       case "false":
-//         setAriaAttr(el1, 'aria-expanded', 'false');
-//         setAriaAttr(el2, 'aria-hidden', 'true');
-//         break;
-//       default:
-//         break;
-//     }
-//   };
-// //function
-// switchAccordion = function(e) {
-//   console.log("triggered");
-//   e.preventDefault();
-//   var thisAnswer = e.target.parentNode.nextElementSibling;
-//   var thisQuestion = e.target;
-//   if(thisAnswer.classList.contains('is-collapsed')) {
-//     setAccordionAria(thisQuestion, thisAnswer, 'true');
-//   } else {
-//     setAccordionAria(thisQuestion, thisAnswer, 'false');
-//   }
-//     thisQuestion.classList.toggle('is-collapsed');
-//     thisQuestion.classList.toggle('is-expanded');
-//     thisAnswer.classList.toggle('is-collapsed');
-//     thisAnswer.classList.toggle('is-expanded');
-
-//     thisAnswer.classList.toggle('animateIn');
-//   };
-//   for (var i=0,len=accordionToggles.length; i<len; i++) {
-//     if(touchSupported) {
-//       accordionToggles[i].addEventListener('touchstart', skipClickDelay, false);
-//     }
-//     if(pointerSupported){
-//       accordionToggles[i].addEventListener('pointerdown', skipClickDelay, false);
-//     }
-//     accordionToggles[i].addEventListener('click', switchAccordion, false);
-//   }
-// })();
