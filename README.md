@@ -59,10 +59,10 @@ To use or contribute to this project, follow these steps:
 
 If you'd like to contribute to this project, follow these steps:
 
-Fork the repository on GitHub.
-Create a new branch for your feature or bug fix.
-Make your changes and commit them.
-Submit a pull request with a clear description of your changes.
+- Fork the repository on GitHub.
+- Create a new branch for your feature or bug fix.
+- Make your changes and commit them.
+- Submit a pull request with a clear description of the changes.
 
 ## License
 
