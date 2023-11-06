@@ -44,12 +44,12 @@ We achieved these objectives by implementing the following:
 To use or contribute to this project, follow these steps:
 
 1. Clone the repository to your local machine:
-```bash
+```console
    git clone https://github.com/Lorriu/Resturant-Menu-Reservation.git
    ```
 
 2. Open the project directory:
-  ```bash
+  ```console
   cd Resturant-Menu-Reservation
   ```
 
