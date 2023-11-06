@@ -3,10 +3,6 @@
 This project is a small restaurant menu web application with a reservation section and a random meal selection button. It was created as part of a JavaScript Final Project by a team of two developers.
 <img width="647" alt="Array-Menu" src="https://github.com/Lorriu/Resturant-Menu-Reservation/assets/124742429/5eb42488-7cf5-4c1a-aa5c-bd5469f10dba">
 
-<img width="759" alt="random-button" src="https://github.com/Lorriu/Resturant-Menu-Reservation/assets/124742429/bbcc5ae9-b932-4e35-89ae-216ffd072ad7">
-
-<img width="819" alt="Form" src="https://github.com/Lorriu/Resturant-Menu-Reservation/assets/124742429/1b67b225-4da7-4ac0-8c07-e04e5dfe4483">
-
 
 # Restaurant Menu Reservation
 
@@ -40,7 +36,7 @@ We achieved these objectives by implementing the following:
 
 - **Random Meal Selection**: To help users who couldn't decide on their reservation, we added a random meal selection button.
 
-- **Availability Checker**: We developed a feature that provides the next 5 available reservation dates and corresponding capacity. If the capacity is full, a message is displayed.
+<img width="759" alt="random-button" src="https://github.com/Lorriu/Resturant-Menu-Reservation/assets/124742429/bbcc5ae9-b932-4e35-89ae-216ffd072ad7">
 
 ## Getting Started
 
