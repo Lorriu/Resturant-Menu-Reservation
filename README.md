@@ -1,22 +1,74 @@
 # Resturant-Menu-Reservation
-A small resturant menu, with reservation section and a random meal selection button
 
-This was a group project that was created with one other person. We created this project as part of a Javascript Final Project.
+This project is a small restaurant menu web application with a reservation section and a random meal selection button. It was created as part of a JavaScript Final Project by a team of two developers.
+<img width="647" alt="Array-Menu" src="https://github.com/Lorriu/Resturant-Menu-Reservation/assets/124742429/5eb42488-7cf5-4c1a-aa5c-bd5469f10dba">
 
-The main objectives of this project was:
+<img width="759" alt="random-button" src="https://github.com/Lorriu/Resturant-Menu-Reservation/assets/124742429/bbcc5ae9-b932-4e35-89ae-216ffd072ad7">
 
-<ul>
-<li> Make Changes to the HTML and/or CSS using Javascript</li>
-<li> Get input from the user</li>
-<li>Use an event to trigger change to the webpage</li>
-<li>Add HTML elements to the webpage using DOM</li>
-<li>Use Arrays, loops and/or conditional logic in Javascript</li>
-</ul>
+<img width="819" alt="Form" src="https://github.com/Lorriu/Resturant-Menu-Reservation/assets/124742429/1b67b225-4da7-4ac0-8c07-e04e5dfe4483">
 
-We achieved this by creating an Array with menu items in it and creating a loop which inputed the menu items on to the page.
 
-We created an event listener than would collect the data from the form from the reservation and edit the inner hmtl of the page to display the reservation details.
+# Restaurant Menu Reservation
 
-We created a randomized function which allowed the user to select a random menu item if they couldnt decide for their reservation.
+**Description**: This project is a small restaurant menu web application with a reservation section and a random meal selection button. It was created as part of a JavaScript Final Project by a team of two developers.
 
-We created an avaliable dates function that took the next 5 avalaible dates and capacity to correspond with the reservation and if they where full displayed a message. 
+## Table of Contents
+
+- [Main Objectives](#main-objectives)
+- [Project Details](#project-details)
+- [Getting Started](#getting-started)
+- [How to Contribute](#how-to-contribute)
+- [License](#license)
+
+## Main Objectives
+
+The main objectives of this project were:
+
+1. Make Changes to the HTML and/or CSS using JavaScript.
+2. Get input from the user.
+3. Use an event to trigger changes to the webpage.
+4. Add HTML elements to the webpage using the DOM.
+5. Utilize arrays, loops, and conditional logic in JavaScript.
+
+## Project Details
+
+We achieved these objectives by implementing the following:
+
+- **Menu Creation**: We created an array containing menu items and used a loop to dynamically insert these items onto the webpage.
+
+- **Reservation System**: We implemented an event listener that collects user input from the reservation form and updates the HTML to display the reservation details.
+
+- **Random Meal Selection**: To help users who couldn't decide on their reservation, we added a random meal selection button.
+
+- **Availability Checker**: We developed a feature that provides the next 5 available reservation dates and corresponding capacity. If the capacity is full, a message is displayed.
+
+## Getting Started
+
+To use or contribute to this project, follow these steps:
+
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com//Resturant-Menu-Reservation.git
+   ```
+
+2. Open the project directory:
+  ```bash
+  cd Resturant-Menu-Reservation
+  ```
+
+3. Open the "index.html" file in your web browser to access the application.
+
+## How to Contribute
+
+If you'd like to contribute to this project, follow these steps:
+
+Fork the repository on GitHub.
+Create a new branch for your feature or bug fix.
+Make your changes and commit them.
+Submit a pull request with a clear description of your changes.
+
+## License
+
+This project is not licensed and was created for practice purposes only, this application should not be used for commercial purposes. 
+
+
