@@ -45,7 +45,7 @@ To use or contribute to this project, follow these steps:
 
 1. Clone the repository to your local machine:
 ```bash
-   git clone [https://github.com//Resturant-Menu-Reservation.git](https://github.com/Lorriu/Resturant-Menu-Reservation.git)
+   git clone https://github.com//Resturant-Menu-Reservation.git
    ```
 
 2. Open the project directory:
