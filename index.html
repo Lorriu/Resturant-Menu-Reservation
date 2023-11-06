@@ -17,6 +17,19 @@
             <div class="title">
                 <h2 class="menu-head">MENU</h2>
 
+
+                <!-- <div class="accordion">
+              <dl>
+                <dt>
+                  <dl>
+                    <dt>
+                      <a href="#accordion1" aria-expanded="false" aria-controls="accordion1" class="accordion-title accordionTitle js-accordionTrigger">Menu Accordion Heading </a>
+                    </dt>
+                    <dd class="accordion-content accordionItem is-collapsed" id="accordion1" aria-hidden="false">
+                      <p> item one </p> -->
+
+
+
                 <div class="menu-container" id="menu-container">
 
                     <!--menu is inserted here -->
@@ -39,16 +52,16 @@
                     <div class="form">
 
                         <label for="name">Name:</label>
-                        <input type="text" id="name" placeholder="insert name" required>
+                        <input type="text" id="name" placeholder="Insert name" required>
+                        
                         <p>
-
-                        <h2 class="availability">Current Availability</h2>
-                        <div id="availableDatesList"></div>
-                        <label for="date">Select a Date:</label>
-                        <input type="date" id="date">
+                            <label for="date">Select a Date:</label>
+                            <input type="date" id="date" required>
                         </p>
+
+
                         <label for="guests">Guests:</label>
-                        <input type="number" id="guests" min="1" placeholder="number (including yourself)">
+                        <input type="number" id="guests" min="1" placeholder="number (including yourself)" required>
 
                         <label>Menu Selection:</label>
                         <select id="menu">
@@ -59,27 +72,23 @@
                             <option value="Beef Burger">Beef Burger</option>
                         </select><br />
 
-                        <label for="dietary" class="dietary-name">Dietary Restrictions:</label>
-                        <input type="text" id="dietary">
-                        <br>
                         <div id="reservation-confirmation"></div>
-                        <br>
-                        <button id="checkAvailability">Check Availability</button>
-                        <button id="viewFilledSpots">View Filled Spots</button>
-                        <button id="submitReservation">Submit Reservation</button>
+                            <button id="submitReservation">1. Confirm Details </button>
+
+                         <div id="sendReservationButton" >
+                            <button id="sendReservationDetails">2. Text me the deets!</button>
                 </form>
             </div>
-            <br>
-            <br>
-            <div id="availabilityInfo"></div>
-            <br>
-            <ul id="filledSpotsList"></ul>
-            <br>
+        
     </div>
     <!-- added your linkedin below with name! -->
 
     <p>Coded by <a href="https://www.linkedin.com/in/hiregabby/" target="_blank">Gabby S</a> and <a href="https://www.linkedin.com/in/lorraine-ugen-03b08480/"
             target="_blank">Lorraine Ugen</a></p>
+    <script src="script.js"></script>
+</body>
+
+</html>
     <script src="script.js"></script>
 </body>
 
