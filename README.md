@@ -1,4 +1,4 @@
-# Resturant-Menu-Reservation
+# Restaurant-Menu-Reservation
 
 This project is a small restaurant menu web application with a reservation section and a random meal selection button. It was created as part of a JavaScript Final Project by a team of two developers.
 
