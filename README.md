@@ -4,11 +4,6 @@ This project is a small restaurant menu web application with a reservation secti
 
 <img width="647" alt="Array-Menu" src="https://github.com/Lorriu/Resturant-Menu-Reservation/assets/124742429/5eb42488-7cf5-4c1a-aa5c-bd5469f10dba">
 
-
-# Restaurant Menu Reservation
-
-**Description**: This project is a small restaurant menu web application with a reservation section and a random meal selection button. It was created as part of a JavaScript Final Project by a team of two developers.
-
 ## Table of Contents
 
 - [Main Objectives](#main-objectives)
