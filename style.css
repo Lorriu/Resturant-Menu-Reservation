@@ -283,37 +283,3 @@ body {
     text-align: center;
   }
 
-/* .accordionItem.is-collapsed {
-    max-height:0;
-}
-.no-js .accordionItem.is-collapsed {
-  max-height: auto;
-}
-.animateIn {
-     animation: accordionIn 0.45s normal ease-in-out both 1; 
-}
-.animateOut {
-     animation: accordionOut 0.45s alternate ease-in-out both 1;
-}
-@keyframes accordionIn {
-  0% {
-    opacity: 0;
-    transform:scale(0.9) rotateX(-60deg);
-    transform-origin: 50% 0;
-  }
-  100% {
-    opacity:1;
-    transform:scale(1);
-  }
-}
-
-@keyframes accordionOut {
-    0% {
-       opacity: 1;
-       transform:scale(1);
-     }
-     100% {
-          opacity:0;
-           transform:scale(0.9) rotateX(-60deg);
-       }
-} */
